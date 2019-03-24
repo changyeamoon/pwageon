@@ -24,6 +24,9 @@ const StyledSelect = styled.select`
   border-radius: 5px;
   background: transparant;
   box-shadow: 2px 2px 5px #888888;
+  &:focus {
+    outline: 0;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -46,6 +49,9 @@ const StyledButton = styled.button`
   &:active {
     box-shadow: 0px 2px 5px #666666;
     transform: translateY(4px);
+  }
+  &:focus {
+    outline: 0;
   }
 `;
 const Main = () => {
