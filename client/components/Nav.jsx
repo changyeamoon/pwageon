@@ -4,23 +4,21 @@ import styled from 'styled-components';
 
 const DropContent = styled.div`
   display: none;
-  position: relative;
+  position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  right: 0;
+  min-height: 50px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
-  z-index: 1;
 `;
 
 const DropDown = styled.div`
   position: fixed;
   bottom: 33%;
-  right: 1em;
-  &:hover {
-    background-color: blue;
-  }
+  right: 0.5em;
+
   &:hover ${DropContent} {
-    display: block;
+    display: grid;
   }
 `;
 

@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
-import { GoogleLogin } from 'react-google-login';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Nav from './components/Nav';
 import Main from './components/Main';
+import Signin from './components/Signin';
 
 const Container = styled.div`
-  font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
   text-align: center;
-  color: palevioletred;
+  font-size: 2em;
+  color: #545e75;
 `;
 
 const App = () => {
   const [login, setLogin] = useState(false);
-
-  const responseGoogle = response => {
-    console.log('after login', response);
-    setLogin(true);
-  };
 
   return (
     <Router>
@@ -27,18 +30,7 @@ const App = () => {
           <Route
             exact
             path="/"
-            render={() =>
-              login ? (
-                <Main />
-              ) : (
-                <GoogleLogin
-                  clientId={process.env.GOOGLE_CLIENT_ID}
-                  buttonText="Login"
-                  onSuccess={responseGoogle}
-                  onFailure={responseGoogle}
-                />
-              )
-            }
+            render={() => (login ? <Main /> : <Signin setLogin={setLogin} />)}
           />
         </Switch>
       </Container>
