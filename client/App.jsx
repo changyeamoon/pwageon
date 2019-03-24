@@ -16,7 +16,7 @@ const Container = styled.div`
   height: 100px;
   text-align: center;
   font-size: 2em;
-  color: #545e75;
+  color: #313b72;
 `;
 
 const App = () => {

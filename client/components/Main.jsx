@@ -7,11 +7,9 @@ const Main = () => {
   const [display, setDisplay] = useState('none');
 
   useEffect(() => {
-    console.log('hello');
     window.onclick = e => {
-      console.log(e.target);
-      if (e.target == <MessageModal display={display} />) {
-        console.log('inside the if statement');
+      const mo = document.getElementsByClassName('sc-bxivhb jANVOA')[0];
+      if (e.target === mo) {
         setDisplay('none');
       }
     };
