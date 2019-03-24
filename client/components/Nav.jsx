@@ -9,15 +9,13 @@ const DropContent = styled.div`
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
-  z-index: 4;
+  z-index: 1;
 `;
 
 const DropDown = styled.div`
   position: fixed;
   bottom: 33%;
   right: 1em;
-  z-index: 3000;
-
   &:hover {
     background-color: blue;
   }
@@ -34,7 +32,7 @@ const StyledLink = styled(Link)`
 
 const Nav = () => (
   <DropDown>
-    <span>HELLO</span>
+    <span>MENU</span>
     <DropContent>
       <StyledLink to="/">home</StyledLink>
       <StyledLink to="/account">about</StyledLink>
